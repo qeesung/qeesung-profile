@@ -1,34 +1,117 @@
-<div layout="vertical" layout-fill>
-
-  <md-content>
-    <header>
-      <acme-navbar creation-date="main.creationDate"></acme-navbar>
-    </header>
-
-    <section class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
-      <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
-      </p>
-      <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
-      <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-      </p>
-    </section>
-
-    <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-card-content>
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-        </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
+<div>
+    <script>
+     $(window).on('scroll', function(){
+	 $timeline_block.each(function(){
+	     if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+		 $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+	     }
+	 });
+     });
+    </script>
+    <script src="assets/js/prism.js"></script>
+    <div id="profile-top">
+        <div id="header">
+            <md-button class="md-raised header-button">Blogs</md-button>
+            <md-button class="md-raised md-primary header-button">Github</md-button>
         </div>
-      </md-card>
+        <div id="header-content">
+            <div class="author-icon-container">
+                <img class="author-icon" alt="author-icon"
+                     src="assets/images/author-icon.png"/>
+            </div>
+            <div class="author-summary">
+
+                <h1 class="title">Hello Qeesung</h1>
+                <div class="summary">
+                    <p class="lg-screen">A, iaculis at erat pellentesque adipiscing commodo elit, at imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis urna, id volutpat lacus. At tellus at urna condimentum mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl, condimentum! Neque ornare aenean euismod elementum nisi, quis! Nec feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin! Donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus! Pellentesque habitant morbi tristique .</p>
+                    <p class="small-screen">
+                        Cursus mattis molestie a, iaculis at erat pellentesque adipiscing commodo elit, at imperdiet dui accumsan sit amet nulla facilisi morbi!
+                    </p>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </md-content>
+
+    <div  class="main-content">
+        <div ng-cloak>
+            <md-content>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="Basic-Info">
+                        <md-content class="md-padding info-padding">
+                            <pre><code class="language-json">
+{{main['basic-info'] | json}}
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="Skills">
+                        <md-content class="md-padding info-padding">
+                            <pre><code class="language-json">
+{{main['skills'] | json}}
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="Hobbits">
+                        <md-content class="md-padding info-padding">
+                            <pre><code class="language-json">
+{{main['basic-info'] | json}}
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
+        <section id="q-timeline">
+	    <div class="q-timeline-block align-left">
+                <div class="q-timeline-divider"></div>
+		<div class="q-timeline-img">
+		    <img src="assets/images/author-icon.png" alt="Picture">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="q-timeline-content">
+		    <h2>Birthday</h2>
+                    <p>A numbskull is born into this world.</p>
+                    <p class="time">1992-12-03</p>
+		</div> <!-- cd-timeline-content -->
+	    </div> <!-- cd-timeline-block -->
+
+            <div class="q-timeline-block align-right">
+                <div class="q-timeline-divider"></div>
+		<div class="q-timeline-img">
+		    <img src="assets/images/author-icon.png" alt="Picture">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="q-timeline-content">
+		    <h2>college</h2>
+                    <p>Majoring in automation in south china of university</p>
+                    <p class="time">2011-08-01</p>
+		</div> <!-- cd-timeline-content -->
+	    </div>
+            <div class="q-timeline-block align-left">
+                <div class="q-timeline-divider"></div>
+		<div class="q-timeline-img">
+		    <img src="assets/images/author-icon.png" alt="Picture">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="q-timeline-content">
+		    <h2>Company</h2>
+                    <p>HUAWEI Software Engineer,be responsible for web development</p>
+                    <p class="time">2015-08-01</p>
+		</div> <!-- cd-timeline-content -->
+	    </div>
+            <div class="q-timeline-block align-right">
+                <div class="q-timeline-divider"></div>
+		<div class="q-timeline-img">
+		    <img src="assets/images/author-icon.png" alt="Picture">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="q-timeline-content">
+		    <h1>now</h1>
+                    <p>Stay hungry,Stay foolish!</p>
+                    <p class="time">{{main['current-time'] | date:'yyyy-MM-dd'}}</p>
+		</div> <!-- cd-timeline-content -->
+	    </div>
+        </section>
+    </div>
 
 </div>
