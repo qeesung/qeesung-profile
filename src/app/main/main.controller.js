@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var app = angular
+    angular
         .module('qeesungProfile')
         .controller('MainController', MainController);
 
@@ -60,7 +60,7 @@
                     "framework":null,
                     "open source projects":[
                         "https://github.com/qeesung/data-struct",
-                        "https://github.com/qeesung/algorithm",
+                        "https://github.com/qeesung/algorithm"
                     ]
                 },
                 {
